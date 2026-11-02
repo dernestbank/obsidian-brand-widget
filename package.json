@@ -1,0 +1,32 @@
+{
+  "name": "obsidian-brand-widget",
+  "version": "1.1.2",
+  "private": true,
+  "description": "Display your logo, motto and quick links in a sidebar widget and status bar, with custom backgrounds and optional animations.",
+  "main": "main.js",
+  "license": "MIT",
+  "author": "dernestbank",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dernestbank/obsidian-brand-widget.git"
+  },
+  "scripts": {
+    "test": "node tests/run.cjs",
+    "check": "node --check main.js && node scripts/check-release.cjs",
+    "lint": "eslint main.js scripts tests",
+    "format": "prettier --write main.js styles.css tests scripts *.json *.md",
+    "format:check": "prettier --check main.js styles.css tests scripts *.json *.md",
+    "release": "node scripts/package-release.cjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "fflate": "^0.8.2",
+    "globals": "^17.14.0",
+    "prettier": "^3.0.0"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  }
+}

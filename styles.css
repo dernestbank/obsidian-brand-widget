@@ -1,0 +1,200 @@
+.brand-widget-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px 14px !important;
+  min-height: 150px;
+  text-align: center;
+  background: var(--background-primary);
+  border-top: 3px solid var(--brand-widget-accent);
+}
+.brand-widget-logo-frame {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 12px;
+  max-width: 100%;
+}
+.brand-widget-bg-white {
+  background: #fff;
+  border: 1px solid #e0e4ea;
+}
+.brand-widget-bg-theme {
+  background: var(--background-secondary);
+}
+.brand-widget-bg-transparent {
+  background: transparent;
+}
+.brand-widget-logo {
+  display: block;
+  width: var(--brand-widget-width);
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+.brand-widget-name {
+  font-size: 22px;
+  color: var(--brand-widget-accent);
+}
+.brand-widget-caption {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.brand-widget-motto {
+  margin: 0 !important;
+  font-size: 12px;
+  color: var(--text-normal);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.brand-widget-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.brand-widget-links button {
+  font-size: 12px;
+  height: auto;
+  padding: 6px 10px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.brand-widget-status {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+.brand-widget-status .brand-widget-logo-frame {
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.brand-widget-status-logo {
+  display: block;
+  width: var(--brand-widget-status-width);
+  max-height: 22px;
+  object-fit: contain;
+}
+.brand-widget-status .brand-widget-name {
+  font-size: 11px;
+}
+.brand-widget-status:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+}
+
+/* Local background layers preserve legible controls and do not intercept input. */
+.brand-widget-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.brand-widget-panel::before,
+.brand-widget-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.brand-widget-panel::before {
+  background-image: var(--brand-widget-bg, none);
+  background-position: center;
+  background-size: var(--brand-widget-bg-fit, cover);
+  background-repeat: no-repeat;
+}
+.brand-widget-panel::after {
+  background: var(--background-primary);
+  opacity: var(--brand-widget-overlay, 1);
+}
+.brand-widget-links button {
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+[data-brand-motion="spin"] img.brand-widget-logo,
+[data-brand-motion="spin"] img.brand-widget-status-logo {
+  animation: bw-spin var(--brand-widget-cycle, 30s) ease-in-out infinite;
+}
+[data-brand-motion="bounce"] img.brand-widget-logo,
+[data-brand-motion="bounce"] img.brand-widget-status-logo {
+  animation: bw-bounce var(--brand-widget-cycle, 30s) ease-in-out infinite;
+}
+[data-brand-motion="dissolve"] img.brand-widget-logo,
+[data-brand-motion="dissolve"] img.brand-widget-status-logo {
+  animation: bw-dissolve var(--brand-widget-cycle, 30s) ease-in-out infinite;
+}
+[data-brand-motion="float"] img.brand-widget-logo,
+[data-brand-motion="float"] img.brand-widget-status-logo {
+  animation: bw-float var(--brand-widget-cycle, 30s) ease-in-out infinite;
+}
+.brand-widget-panel:hover img,
+.brand-widget-panel:focus-within img,
+.brand-widget-status:hover img,
+.brand-widget-status:focus-visible img {
+  animation-play-state: paused;
+}
+@keyframes bw-spin {
+  0% {
+    transform: rotate(0);
+  }
+  15%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bw-bounce {
+  0%,
+  7.5%,
+  15%,
+  100% {
+    transform: translateY(0);
+  }
+  4%,
+  11% {
+    transform: translateY(-3px);
+  }
+}
+@keyframes bw-float {
+  0%,
+  15%,
+  100% {
+    transform: translateY(0);
+  }
+  7.5% {
+    transform: translateY(-2px);
+  }
+}
+@keyframes bw-dissolve {
+  0%,
+  15%,
+  100% {
+    opacity: 1;
+  }
+  7.5% {
+    opacity: 0.4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-widget-panel img,
+  .brand-widget-status img {
+    animation: none !important;
+  }
+}
+
+.brand-widget-settings-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-widget-settings-icon {
+  display: flex;
+  color: var(--interactive-accent);
+}
+.brand-widget-settings-icon svg {
+  width: 30px;
+  height: 30px;
+}

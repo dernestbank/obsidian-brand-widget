@@ -1,0 +1,10 @@
+{
+  "id": "brand-widget",
+  "name": "Brand-widget",
+  "version": "1.1.2",
+  "minAppVersion": "1.14.5",
+  "description": "Display your logo, motto and quick links in a sidebar widget and status bar, with custom backgrounds and optional animations.",
+  "author": "dernestbank",
+  "isDesktopOnly": true,
+  "authorUrl": "https://github.com/dernestbank"
+}
