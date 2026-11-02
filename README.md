@@ -22,7 +22,9 @@ Light and dark themes, captured in a separate demo vault in Obsidian 1.14.5. No 
 
 ## Install
 
-Brand-widget is not yet listed in Community Plugins. For manual installation:
+Install from the [Obsidian Community listing](https://community.obsidian.md/plugins/brand-widget), or open Settings → Community plugins → Browse and search for Brand-widget.
+
+For manual installation:
 
 1. Download the ZIP from [GitHub Releases](https://github.com/dernestbank/obsidian-brand-widget/releases).
 2. Extract the `brand-widget` folder into your vault's `.obsidian/plugins/` directory.
